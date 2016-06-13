@@ -1,0 +1,7 @@
+<powershell>
+Set-ExecutionPolicy UnRestricted -Force
+iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
+choco install Boxstarter -y
+Import-Module Boxstarter.Chocolatey
+Install-BoxstarterPackage -DisableReboots -PackageName https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/boxstarter-win2012-vs2015.ps1
+</powershell>

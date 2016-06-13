@@ -43,7 +43,7 @@ Get-ChocolateyWebFile 'cmder' "$env:USERPROFILE\Desktop\cmder.7z" 'https://githu
 
 #-- Configuration ------
 Write-BoxstarterMessage "Setting up bash profile and prompt.."
-Get-ChocolateyWebFile 'setup-git.cmd' "$env:USERPROFILE\setup-git.cmd" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/setup-git.cmd'
+Get-ChocolateyWebFile 'setup-environment.cmd' "$env:USERPROFILE\setup-environment.cmd" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/setup-environment.cmd'
 Get-ChocolateyWebFile '.gitconfig' "$env:USERPROFILE\.gitconfig" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/config/.gitconfig'
 
 Get-ChocolateyWebFile 'ConEmu.xml' "C:\tools\cmder\config\ConEmu.xml" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/config/cmder/ConEmu.xml'

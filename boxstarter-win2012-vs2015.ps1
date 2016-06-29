@@ -46,7 +46,7 @@ Write-BoxstarterMessage "Setting up bash profile and prompt.."
 Get-ChocolateyWebFile 'setup-environment.cmd' "$env:USERPROFILE\setup-environment.cmd" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/setup-environment.cmd'
 Get-ChocolateyWebFile '.gitconfig' "$env:USERPROFILE\.gitconfig" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/config/.gitconfig'
 
-Get-ChocolateyWebFile 'ConEmu.xml' "C:\tools\cmder\config\ConEmu.xml" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/config/cmder/ConEmu.xml'
+Get-ChocolateyWebFile 'ConEmu.xml' "C:\tools\cmder\vendor\conemu-maximus5\ConEmu.xml" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/config/cmder/ConEmu.xml'
 Get-ChocolateyWebFile 'aliases' "C:\tools\cmder\config\aliases" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/config/cmder/aliases'
 Get-ChocolateyWebFile 'git.lua' "C:\tools\cmder\config\git.lua" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/config/cmder/git.lua'
 

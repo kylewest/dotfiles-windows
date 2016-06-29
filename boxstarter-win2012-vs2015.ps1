@@ -27,10 +27,11 @@ cinst -y resharper
 cinst -y nuget.commandline
 cinst -y ruby
 cinst -y nodejs
-# cinst -y cmder -pre     # enable once chocolately 0.9.10+ comes out
+cinst -y cmder -pre
 cinst -y kdiff3
 cinst -y git -params "/GitAndUnixToolsOnPath"
 cinst -y prefix
+
 
 #-- VS Extensions ------
 Install-ChocolateyVsixPackage "EditorConfig" "http://visualstudiogallery.msdn.microsoft.com/c8bccfe2-650c-4b42-bc5c-845e21f96328/file/75539/12/EditorConfigPlugin.vsix"
@@ -39,7 +40,7 @@ Install-ChocolateyVsixPackage "EditorConfig" "http://visualstudiogallery.msdn.mi
 #-- Manual Installs ------
 Write-BoxstarterMessage "Downloading manual installs.."
 Get-ChocolateyWebFile 'AWSToolkit' "$env:USERPROFILE\Desktop\AWSToolkit.msi" 'http://sdk-for-net.amazonwebservices.com/latest/AWSToolsAndSDKForNet.msi'
-Get-ChocolateyWebFile 'cmder' "$env:USERPROFILE\Desktop\cmder.7z" 'https://github.com/cmderdev/cmder/releases/download/v1.3.0-pre/cmder.7z'
+
 
 #-- Configuration ------
 Write-BoxstarterMessage "Setting up bash profile and prompt.."
@@ -53,8 +54,9 @@ Get-ChocolateyWebFile 'git.lua' "C:\tools\cmder\config\git.lua" 'https://raw.git
 # Write-BoxstarterMessage "Creating projects folder in root"
 New-Item -path "C:\code" -type directory -force
 
+
 #-- POST install touches -------
 
 #taskbar pins
 Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Google\Chrome\Application\chrome.exe"
-#Install-ChocolateyPinnedTaskBarItem "c:\tools\cmder\cmder.exe"
+Install-ChocolateyPinnedTaskBarItem "c:\tools\cmder\cmder.exe"

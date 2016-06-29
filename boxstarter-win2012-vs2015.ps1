@@ -12,6 +12,7 @@ cinst -y SourceCodePro
 
 #-- Apps ---------
 cinst -y googlechrome
+cinst -y firefox
 cinst -y 7zip
 cinst -y atom
 cinst -y notepadplusplus

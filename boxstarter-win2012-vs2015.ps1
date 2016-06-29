@@ -46,6 +46,7 @@ Get-ChocolateyWebFile 'AWSToolkit' "$env:USERPROFILE\Desktop\AWSToolkit.msi" 'ht
 #-- Configuration ------
 Write-BoxstarterMessage "Setting up bash profile and prompt.."
 Get-ChocolateyWebFile 'setup-environment.cmd' "$env:USERPROFILE\setup-environment.cmd" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/setup-environment.cmd'
+Get-ChocolateyWebFile 'windows10-cleanup.ps1' "$env:USERPROFILE\windows10-cleanup.ps1" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/windows10-cleanup.ps1'
 Get-ChocolateyWebFile '.gitconfig' "$env:USERPROFILE\.gitconfig" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/config/.gitconfig'
 
 Get-ChocolateyWebFile 'ConEmu.xml' "C:\tools\cmder\vendor\conemu-maximus5\ConEmu.xml" 'https://raw.githubusercontent.com/kylewest/dotfiles-windows/master/config/cmder/ConEmu.xml'

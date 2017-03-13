@@ -8,6 +8,7 @@ Set-CornerNavigationOptions -DisableUpperRightCornerShowCharms -DisableUpperLeft
 # http://blog.zerosharp.com/boxstarter-and-checksums/
 choco feature disable -n=checksumFiles
 choco feature enable -n=allowEmptyChecksums
+choco feature enable -n=allowEmptyChecksumsSecure
 try {
   #-- Chocolatey ---------
 
@@ -40,6 +41,7 @@ try {
 finally {
   choco feature enable -n=checksumFiles
   choco feature disable -n=allowEmptyChecksums
+  choco feature disable -n=allowEmptyChecksumsSecure
 }
 
 #-- Manual Installs ------

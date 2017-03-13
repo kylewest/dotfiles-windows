@@ -4,33 +4,43 @@ Disable-UAC
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar
 Set-CornerNavigationOptions -DisableUpperRightCornerShowCharms -DisableUpperLeftCornerSwitchApps
 
-#-- Chocolatey ---------
+# temporarily enable/disable features to bypass checksums
+# http://blog.zerosharp.com/boxstarter-and-checksums/
+choco feature disable -n=checksumFiles
+choco feature enable -n=allowEmptyChecksums
+try {
+  #-- Chocolatey ---------
 
-#-- Dependencies ---------
-cinst -y dotnet3.5
-cinst -y SourceCodePro
+  #-- Dependencies ---------
+  cinst -y dotnet3.5
+  cinst -y SourceCodePro
 
-#-- Apps ---------
-cinst -y googlechrome
-cinst -y firefox
-cinst -y 7zip
-cinst -y atom
-cinst -y notepadplusplus
-cinst -y sourcetree
-cinst -y fiddler4
-cinst -y linqpad5
+  #-- Apps ---------
+  cinst -y googlechrome
+  cinst -y firefox
+  cinst -y 7zip
+  cinst -y atom
+  cinst -y cmder
+  cinst -y notepadplusplus
+  cinst -y sourcetree
+  cinst -y fiddler4
+  cinst -y linqpad
 
-#-- Development ---------
-cinst -y mssqlservermanagementstudio2014express
-cinst -y redis-desktop-manager
-cinst -y resharper
-cinst -y nuget.commandline
-cinst -y ruby
-cinst -y nodejs
-cinst -y kdiff3
-cinst -y git -params "/GitAndUnixToolsOnPath"
-cinst -y prefix
-
+  #-- Development ---------
+  cinst -y mssqlservermanagementstudio2014express
+  cinst -y redis-desktop-manager
+  cinst -y resharper
+  cinst -y nuget.commandline
+  cinst -y ruby
+  cinst -y nodejs
+  cinst -y kdiff3
+  cinst -y git -params "/GitAndUnixToolsOnPath"
+  cinst -y prefix
+}
+finally {
+  choco feature enable -n=checksumFiles
+  choco feature disable -n=allowEmptyChecksums
+}
 
 #-- Manual Installs ------
 Write-BoxstarterMessage "Downloading manual installs.."
